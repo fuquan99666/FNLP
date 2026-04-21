@@ -1,0 +1,107 @@
+下面是作业中涉及到的POS Tag的解释，供参考。
+english subset and perturbed english subset tagging : 
+{'PUNCT': 0, 'CC': 1, 'CD': 2, 'DT': 3, 'EX': 4, 'FW': 5, 'IN': 6, 'JJ': 7, 'JJR': 8, 
+'JJS': 9, 'LS': 10, 'MD': 11, 'NN': 12, 'NNP': 13, 'NNPS': 14, 'NNS': 15, 'PDT': 16, 
+'POS': 17, 'PRP': 18, 'PRP$': 19, 'RB': 20, 'RBR': 21, 'RBS': 22, 'RP': 23, 'SYM': 24, 
+'TO': 25, 'UH': 26, 'VB': 27, 'VBD': 28, 'VBG': 29, 'VBN': 30, 'VBP': 31, 'VBZ': 32, 
+'WDT': 33, 'WP': 34, 'WP$': 35, 'WRB': 36}
+
+解释:
+# 符号
+PUNCT: 标点
+SYM: 符号(+-=%等)
+
+# 名词
+NN: 名词(单数/不可数)
+NNS: 名词(复数)
+NNP: 专有名词(单数)
+NNPS: 专有名词(复数)
+
+# 动词
+VB: 动词原形
+VBD: 动词过去式
+VBG: 动名词/现在分词
+VBN: 过去分词
+VBP: 动词现在时(非三单)
+VBZ: 动词现在时(三单)
+MD: 情态动词(can/will/must等)
+
+# 形容词/副词
+JJ: 形容词
+JJR: 形容词比较级
+JJS: 形容词最高级
+RB: 副词
+RBR: 副词比较级
+RBS: 副词最高级
+
+# 代词/限定词
+PRP: 人称代词(I/you/he等)
+PRP$: 物主代词(my/your/his等)
+DT: 限定词(the/a/this等)
+PDT: 前位限定词(all/both等)
+WDT: wh-限定词(which/that)
+WP: wh-代词(who/what/which)
+WP$: 所有格wh-代词(whose)
+
+# 功能词
+IN: 介词/从属连词(in/of/because等)
+CC: 并列连词(and/or/but)
+TO: 不定式标记to
+RP: 小品词(up/off/out等)
+EX: 存在句there(There is...)
+UH: 感叹词(oh/wow/ah)
+
+# 其他
+CD: 基数词(1/2/1990等)
+LS: 列表标记(1./a)/b)等)
+FW: 外来词
+POS: 所有格标记('s)
+WRB: wh-副词(when/where/how/why)
+
+alien texts subset tagging:
+{
+    0: "NOUN",
+    1: "PUNCT",
+    2: "ADP",
+    3: "NUM",
+    4: "SYM",
+    5: "SCONJ",
+    6: "ADJ",
+    7: "PART",
+    8: "DET",
+    9: "CCONJ",
+    10: "PROPN",
+    11: "PRON",
+    12: "X",
+    13: "_",
+    14: "ADV",
+    15: "INTJ",
+    16: "VERB",
+    17: "AUX"
+}
+
+解释：
+
+# 核心实词                    # 例子
+NOUN: 名词(普通事物/概念)      # dog, water, freedom
+PROPN: 专有名词(人名/地名等)   # John, London, IBM
+VERB: 动词(动作/状态)          # run, is, have
+ADJ: 形容词(修饰名词)          # big, red, interesting
+ADV: 副词(修饰动词/形容词)     # quickly, very, well
+PRON: 代词(代替名词)           # I, you, he, this, someone
+NUM: 数词(数字/数量)           # one, two, 1990, first
+
+# 功能词
+DET: 限定词(修饰名词)          # the, a, this, my, some
+ADP: 介词/后置词              # in, of, on, with, at
+CCONJ: 并列连词               # and, or, but, nor
+SCONJ: 从属连词               # because, if, when, that
+PART: 小品词/助词             # to(不定式), not, 的(中文)
+AUX: 助动词                   # be, have, do, will, can
+
+# 其他
+PUNCT: 标点符号               # . , ! ? : ; " '
+SYM: 符号(非标点)             # + - = % $ €
+INTJ: 感叹词                  # oh, wow, ah, uh-huh
+X: 其他/无法归类              # 外来词/错误/特殊标记
+_: 未知/空标签                # 缺失值占位符
