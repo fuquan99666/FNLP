@@ -3,7 +3,7 @@ import pandas as pd
 
 def peek():
     # peek the data 
-    df = pd.read_parquet("./data/alien_train.parquet")
+    df = pd.read_parquet("./data/english_train.parquet")
     print(df.head())
     print(df.info())
     # print(df.columns)
